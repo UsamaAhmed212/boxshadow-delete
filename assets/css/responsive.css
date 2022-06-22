@@ -1,0 +1,343 @@
+/* 
+    ##Device = Mobiles, Tablets, Ipads (portrait)
+    ##Screen = B/w 0px to 1199px
+*/
+@media only screen and (max-width: 1199px) {
+    /* #about-box-shadow-wrapper > .about-box-shadow-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section,
+    #box-shadow-wrapper .box-shadow-section {
+        margin: 0px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles, Tablets, Ipads (portrait)
+    ##Screen = B/w 0px to 991px
+*/
+@media only screen and (max-width: 991px) {
+    /* Background Image Area Css */
+    #background-image img {
+        object-fit: cover;
+    }
+    
+    /* About Box Shadow Section Css */
+    #box-shadow-wrapper .box-shadow-section #skills-section .skill-item {
+        margin-bottom: 36px;
+    }
+
+    /*  #about-section > .about-content Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content {
+        padding: 50px;
+        width: 75%;
+    }
+
+    /* #contact-section > #contact-form */
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form {
+        padding: 0px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles, Tablets, Ipads (portrait)
+    ##Screen = B/w 0px to 768px
+*/
+@media only screen and (max-width: 768px) {
+    /* #about-box-shadow-wrapper and #box-shadow-wrapper Css */
+    #about-box-shadow-wrapper, #box-shadow-wrapper {
+        padding: 0 28px;
+    }
+
+    /* #about-section > .about-content > .about-btn */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-btn a {
+        margin-right: auto;
+    }
+
+    /* #about-section > .about-content Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content {
+        padding: 40px;
+        width: 100%;
+    }
+
+    /* Service Section > .service-box Css */
+    #box-shadow-wrapper .box-shadow-section #service-section .service-box {
+        padding: 15px 8px;
+    }
+
+    /* About Box Shadow Section Css */
+    #box-shadow-wrapper .box-shadow-section #skills-section .skill-item {
+        margin-bottom: 32px;
+    }
+
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #skill-section .skill-item {
+        margin-bottom: 35px;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .section-title p {
+        max-width: 90%;
+    }
+
+    /* #service-section Css */
+    #box-shadow-wrapper .box-shadow-section #service-section {
+        margin-bottom: 70px;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-content {
+        min-height: 190px;
+        max-height: 190px;
+        margin: 0;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-content img {
+        min-height: 190px;
+        max-height: 190px;
+        object-fit: cover;
+    }
+
+    /* #contact-section > #contact-form */
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form > * {
+        padding: 7px;
+    }
+
+}
+
+
+/* 
+    ##Device = Mobiles, Tablets, Ipads (portrait)
+    ##Screen = B/w 0px to 575px
+*/
+@media only screen and (max-width: 575px) {
+    /* #contact-section > #contact-form */
+    #box-shadow-wrapper .box-shadow-section #contact-section {
+        padding: 0 8px;
+        padding-top: 50px;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form > * {
+        padding: 0px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 499px
+*/
+@media only screen and (max-width: 499px) {
+    /* #about-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-heading h1 {
+        font-size: 40px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title h1 {
+        font-size: 56px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content {
+        padding: 25px;
+    }
+
+    
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .section-title p {
+        max-width: 100%;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader > div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 416px
+*/
+@media only screen and (max-width: 416px) {
+    /* #about-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-heading h1 {
+        font-size: 30px;
+        padding: 0px 10px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content {
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title {
+        min-height: 130px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title h1 {
+        font-size: 45px;
+    }
+    
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-description {
+        padding: 10px 0;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-description p {
+        line-height: 1.6;
+    }
+
+    /* #about-section and #service-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-description,
+    #box-shadow-wrapper .box-shadow-section #service-section .service-box p {
+        text-align: center;
+    }
+
+    /* Service Section Css */
+    #box-shadow-wrapper .box-shadow-section #service-section .service-box {
+        padding: 25px 10px;
+    }
+
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-content {
+        min-height: 145px;
+        max-height: 145px;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-content img {
+        min-height: 145px;
+        max-height: 145px;
+    }
+
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .more-portfolio {
+        margin-right: 1px;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .all-portfolio {
+        margin-left: 1px;
+    }
+
+    /* #contact-section > #contact-form Css */
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control.message {
+        min-height: 85px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 382px
+*/
+@media only screen and (max-width: 382px) {
+    /* #about-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title_social_icons {
+        text-align: center;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title_social_icons a {
+        margin: 0 8px;
+    }
+
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .more-portfolio,
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .all-portfolio {
+        min-width: 12.5rem;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 299px
+*/
+@media only screen and (max-width: 299px) {
+    /* About Box Shadow Section and Box Shadow Section Css */
+    #about-box-shadow-wrapper,#box-shadow-wrapper {
+        padding: 0;
+    }
+    
+    /* About Box Shadow Section Css */
+    #about-box-shadow-wrapper {
+        margin-top: 100px;
+    }
+
+    /* #about-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title {
+        min-height: 110px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-heading {
+        margin-top: -70px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-heading h1 {
+        font-size: 27px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title h1 {
+        font-size: 40px;
+    }
+
+    /* #contact-section > #contact-form Css */
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control.message {
+        min-height: 80px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 265px
+*/
+@media only screen and (max-width: 265px) {
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader a {
+        min-width: 165px;
+        padding: 12px 31px;
+    }
+
+    /* #contact-section > #contact-form Css */
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control.message {
+        min-height: 75px;
+    }
+}
+
+
+/* 
+    ##Device = Mobiles (portrait)
+    ##Screen = B/w 0px to 239px
+*/
+@media only screen and (max-width: 239px) {
+    /* #about-section Css */
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-heading h1 {
+        font-size: 21px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title h1 {
+        font-size: 32px;
+    }
+
+    #about-box-shadow-wrapper .about-box-shadow-section #about-section .about-content .about-heading-title-description span {
+        font-size: 20px;
+    }
+    /* Service Section Css */
+    #box-shadow-wrapper .box-shadow-section #service-section .service-box h4 {
+        font-size: 16px;
+    }
+    /* #Portfolio-section Css */
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .more-portfolio, #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader .all-portfolio {
+        min-width: 11.5rem;
+    }
+
+    #box-shadow-wrapper .box-shadow-section #Portfolio-section .portfolio-loader a {
+        min-width: unset;
+        padding: 12px 0px;
+    }
+
+    /* Contact Section Css */
+    #box-shadow-wrapper .box-shadow-section #service-section .service-box {
+        padding: 15px 5px;
+    }
+    
+    #box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn {
+        width: 11.5rem;
+    }
+}
