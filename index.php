@@ -1,44 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php language_attributes(); ?>" class="no-js">   
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title Bar Logo -->
-    <link rel="icon" href="./images/title-bar-log.webp" type="image/png">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?> ./images/title-bar-log.webp" type="image/png">
 
     <!-- Fonts  -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="./assets/fonts/alisandra/alisandra.css" rel="stylesheet">
-    <link href="./assets/fonts/inheritance/inheritance.css" rel="stylesheet">
-
-    <!-- Bootstrap Css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
     
-    <!-- Common Css -->
-    <link rel="stylesheet" href="./assets/css/common.css">
     
-    <!-- Style Css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!-- Scroll To Top And Draw On Scroll Css -->
-    <link rel="stylesheet" href="./assets/plugins/scroll-to-top-and-draw-on-scroll/scroll-to-top-and-draw-on-scroll.css">
-
-    <!-- Sticky Navigation Menu Css -->
-    <link rel="stylesheet" href="assets/plugins/sticky-navigation-menu/sticky-navigation-menu.css">
-
-    <!-- Responsive Css -->
-    <link rel="stylesheet" href="./assets/css/responsive.css">
-
-    <!-- Aso Plugin Css -->
-    <link rel="stylesheet" href="assets/plugins/aos/css/aos.css">
-
-    <title>Personal Website</title>
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?> >
     <!-- Preloader -->
     <div class="loader"></div>
     
@@ -56,7 +34,7 @@
     
     <!-- Background Image Area -->
     <section id="background-image">
-        <img src="./images/background-image.jpg" alt="Background Image">
+        <img src="<?php echo get_template_directory_uri(); ?> ./images/background-image.jpg" alt="Background Image">
     </section>
 
     <!-- Header Area -->
@@ -68,7 +46,7 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="container-fluid">
                                 <a class="navbar-brand" href="#">
-                                    <img data-src="./images/logo-1.webp" alt="Logo">
+                                    <img data-src="<?php echo get_template_directory_uri(); ?> ./images/logo-1.webp" alt="Logo">
                                 </a>
 
                                 <div id="menu-toggle">
@@ -151,11 +129,11 @@
                                             </div>
 
                                             <div class="about-heading-title_social_icons my-4">
-                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="100"><img src="images/svg/twitter.svg" alt="SVG" class="svg"/></a>
-                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="200"><img src="images/svg/facebook-f.svg" alt="SVG" class="svg"/></a>
-                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="300"><img src="images/svg/instagram.svg" alt="SVG" class="svg"/></a>
-                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="400"><img src="images/svg/linkedin-in.svg" alt="SVG" class="svg"/></a>
-                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="500"><img src="images/svg/dribbble.svg" alt="SVG" class="svg"/></a>                                  
+                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="100"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/twitter.svg" alt="SVG" class="svg"/></a>
+                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="200"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/facebook-f.svg" alt="SVG" class="svg"/></a>
+                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="300"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/instagram.svg" alt="SVG" class="svg"/></a>
+                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="400"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/linkedin-in.svg" alt="SVG" class="svg"/></a>
+                                                <a href="#" data-aos="zoom-in-up" data-aos-delay="500"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/dribbble.svg" alt="SVG" class="svg"/></a>                                  
                                             </div>
                                             
                                             <div class="about-btn" data-aos="zoom-in">
@@ -191,7 +169,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/react.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/react.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -199,7 +177,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/invision.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/invision.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -207,7 +185,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/figma.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/figma.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -215,7 +193,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/photoshop.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/photoshop.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -223,7 +201,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/adobe-after-effects.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?>./images/adobe-after-effects.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -231,7 +209,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/sketch.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/sketch.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -239,7 +217,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0">
                                         <a href="#" target="_blank">
                                             <div class="skill-item" data-aos="fade-up">
-                                                <img data-src="./images/marvel.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/marvel.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -263,7 +241,7 @@
                                         <a href="#" target="_blank">
                                             <div class="service-box" data-aos="fade-up">
                                                 <div class="service-logo">
-                                                    <img src="./images/svg/web_design.svg" alt="Web Design">
+                                                    <img src="<?php echo get_template_directory_uri(); ?> ./images/svg/web_design.svg" alt="Web Design">
                                                 </div>
                                                 <h4 class="service-title">Web Design</h4>
                                                 <p class="service-description">Build your pages in minutes easily with the worlds best page builders.</p>
@@ -275,7 +253,7 @@
                                         <a href="#" target="_blank">
                                             <div class="service-box" data-aos="fade-up">
                                                 <div class="service-logo">
-                                                    <img src="./images/svg/web_development.svg" alt="Web Development">
+                                                    <img src="<?php echo get_template_directory_uri(); ?> ./images/svg/web_development.svg" alt="Web Development">
                                                 </div>
                                                 <h4 class="service-title">Web Development</h4>
                                                 <p class="service-description">Build your pages in minutes easily with the worlds best page builders.</p>
@@ -287,7 +265,7 @@
                                         <a href="#" target="_blank">
                                             <div class="service-box" data-aos="fade-up">
                                                 <div class="service-logo">
-                                                    <img src="./images/svg/responsive_design.svg" alt="Responsive Design">
+                                                    <img src="<?php echo get_template_directory_uri(); ?> ./images/svg/responsive_design.svg" alt="Responsive Design">
                                                 </div>
                                                 <h4 class="service-title">Responsive Design</h4>
                                                 <p class="service-description">Build your pages in minutes easily with the worlds best page builders.</p>
@@ -299,7 +277,7 @@
                                         <a href="#" target="_blank">
                                             <div class="service-box" data-aos="fade-up">
                                                 <div class="service-logo">
-                                                    <img src="./images/svg/wordpress.svg" alt="Wordpress">
+                                                    <img src="<?php echo get_template_directory_uri(); ?> ./images/svg/wordpress.svg" alt="Wordpress">
                                                 </div>
                                                 <h4 class="service-title">WP Customization and Development</h4>
                                                 <p class="service-description">Build your pages in minutes easily with the worlds best page builders.</p>
@@ -311,7 +289,7 @@
                                         <a href="#" target="_blank">
                                             <div class="service-box" data-aos="fade-up">
                                                 <div class="service-logo">
-                                                <img src="./images/svg/api.svg" alt="API">
+                                                <img src="<?php echo get_template_directory_uri(); ?> ./images/svg/api.svg" alt="API">
                                                 </div>
                                                 <h4 class="service-title">API Development</h4>
                                                 <p class="service-description">Build your pages in minutes easily with the worlds best page builders.</p>
@@ -338,7 +316,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-01.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-01.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -346,7 +324,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-02.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-02.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -354,7 +332,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-03.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-03.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -362,7 +340,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-04.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-04.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -370,7 +348,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-05.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-05.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -378,7 +356,7 @@
                                     <div class="col-sm-6 col-lg-4 p-0 my-2">
                                         <a href="#" target="_blank">
                                             <div class="portfolio-content" data-aos="fade-up">
-                                                <img data-src="./images/thumbnail-06.png" alt="img">
+                                                <img data-src="<?php echo get_template_directory_uri(); ?> ./images/thumbnail-06.png" alt="img">
                                             </div>
                                         </a>
                                     </div>
@@ -412,8 +390,8 @@
                                         <div data-aos="zoom-in">
                                             <button type="submit" class="send-btn">
                                                 <span class="submit">Send Message</span>
-                                                <span class="loading"><img src="images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
-                                                <span class="check"><img src="images/svg/check.svg" alt="SVG" class="svg"></span>
+                                                <span class="loading"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
+                                                <span class="check"><img src="<?php echo get_template_directory_uri(); ?> ./images/svg/check.svg" alt="SVG" class="svg"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -422,7 +400,7 @@
                         </section>
                     
                         <!-- Footer Section -->
-                        <footer id="footer-section" style="background-image: url(&quot;./images/svg/patrn.svg&quot;);">
+                        <footer id="footer-section" style="background-image: url(&quot;<?php echo get_template_directory_uri(); ?>./images/svg/patrn.svg&quot;);">
                             <div class="container-md">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12 p-0 text-center">
@@ -440,32 +418,10 @@
         </div>
     </section>
     
-    <!-- SVG Loader -->
-    <script src="assets/js/svg-loader.js"></script>
-
-    <!-- jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    
     <!-- Bootstrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Enable Disable Scrolling Js -->
-    <script src="assets/js/enable-disable-scrolling.js"></script>
-
-    <!-- Scroll To Top And Draw On Scroll Js -->
-    <script src="assets/plugins/scroll-to-top-and-draw-on-scroll/scroll-to-top-and-draw-on-scroll.js"></script>
-
-    <!-- Sticky Navigation Menu Js -->
-    <script src="assets/plugins/sticky-navigation-menu/sticky-navigation-menu.js"></script>
-
-    <!-- Typed Js -->
-    <script src="assets/js/typed.js"></script>
-    
-    <!-- Custom Js -->
-    <script src="assets/js/custom.js"></script>
-    
-    <!-- Aso Plugin Js -->
-    <script src="assets/plugins/aos/js/aos.js"></script>
-    <script src="assets/plugins/aos/aos-init.js"></script>
+ 
+    <?php wp_footer(); ?>
 </body>
 </html>

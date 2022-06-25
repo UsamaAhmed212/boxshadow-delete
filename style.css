@@ -14,3 +14,18 @@
   Tags: light, dark, responsive-layout
   Text Domain: boxshadow
 */
+
+body.admin-bar #header {
+    top: 32px;
+}
+
+body.admin-bar #about-box-shadow-wrapper {
+    top: 247px;
+}
+
+@media (max-width: 600px) { 
+    body.admin-bar #header.sticky {
+        top: 0px;
+    }    
+}
+
