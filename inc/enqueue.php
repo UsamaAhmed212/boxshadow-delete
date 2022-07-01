@@ -1,4 +1,8 @@
 <?php
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 //Theme Css and Js File Enqueue
 function boxshadow_cs_js_enqueue() {
     // Fonts Enqueue
@@ -134,8 +138,6 @@ function boxshadow_cs_js_enqueue() {
 
 }
 add_action( 'wp_enqueue_scripts', 'boxshadow_cs_js_enqueue');
-
-
 
 // Fonts Enqueue Function
 function boxshadow_fonts_url() {

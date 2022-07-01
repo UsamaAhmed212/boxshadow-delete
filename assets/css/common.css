@@ -369,10 +369,6 @@ img[data-src] {
 }
 
 /* Header Area Css */
-#header {
-    /* margin-top: -400px; */
-}
-
 #header .header-section .navbar {
     margin: 0px 68px;
     font-size: 16px;
@@ -380,7 +376,7 @@ img[data-src] {
 }
 
 #header .header-section .navbar a.navbar-brand {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     min-width: 120px;

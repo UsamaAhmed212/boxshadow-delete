@@ -81,14 +81,14 @@ jQuery( document ).ready( function($) {
         }
 
         // Close or Hide .sidebar-menu when Click Outside 
-        $(document).on('click', debounce(function (e) {
+        $(document).on('click', function (e) {
             var container = $(".sidebar-menu");
             // If the target of the click isn't the container
             if(!container.is(e.target) && container.has(e.target).length === 0){
                 $("#menu-toggle").removeClass('open');
                 $(".sidebar-menu.active").removeClass("active");
             }
-        }));
+        });
 
         // beforebegin Method add new Element the HTML into the container before the element
         var inner_value = `<span class="sub-toggle">

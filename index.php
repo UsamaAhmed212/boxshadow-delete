@@ -4,17 +4,13 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title Bar Logo -->
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?> ./images/title-bar-log.webp" type="image/png">
-
-    <!-- Fonts  -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
+    <?php 
+        if ( has_site_icon()  && get_option( 'site_icon' ) ) { ?>
+        <!-- Title Bar Logo -->
+        <link rel="icon" href="<?php echo get_theme_mod( 'site_icon' ); ?>" type="image/png">
+    <?php }
     
-    
-    <?php wp_head(); ?>
+    wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
     <!-- Preloader -->
@@ -45,9 +41,12 @@
                     <div class="col-12 p-0">
                         <nav class="navbar navbar-expand-lg">
                             <div class="container-fluid">
-                                <a class="navbar-brand" href="#">
-                                    <img data-src="<?php echo get_template_directory_uri(); ?> ./images/logo-1.webp" alt="Logo">
-                                </a>
+                                <?php 
+                                    if ( get_theme_mod( 'boxshadow_logo' ) ) { ?>
+                                    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                        <img data-src="<?php echo get_theme_mod( 'boxshadow_logo' ); ?>" alt="Logo">
+                                    </a>
+                                <?php }?>
 
                                 <div id="menu-toggle">
                                     <div id="hamburger">
@@ -418,10 +417,6 @@
         </div>
     </section>
     
-    
-    <!-- Bootstrap Js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
- 
     <?php wp_footer(); ?>
 </body>
 </html>
