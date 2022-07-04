@@ -64,8 +64,6 @@ function boxshadow_Customizer_register( $wp_customize ) {
     *Theme Customizer Site Logo & Icon ( Site Identity ) Section End
     ********************************************************************/
 
-
-
 }
 add_action( 'customize_register', 'boxshadow_Customizer_register' );
 

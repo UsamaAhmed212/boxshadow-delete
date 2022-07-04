@@ -60,26 +60,20 @@
                                     </div>
                                 </div>
 
-                                <div class="collapse navbar-collapse sidebar-menu" id="navbarNav">
-                                    <a href="" class="sidebar-menu-close"><span></span></a>
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">About</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Skills</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="portfolio.html">Portfolio</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <?php 
+                                wp_nav_menu( array(
+                                    'theme_location'            => 'header_menu',
+                                    'container'                 => 'div',
+                                    'container_class'           => 'collapse navbar-collapse sidebar-menu',
+                                    'container_id'              => 'navbarNav',
+                                    'menu_class'                => 'navbar-nav',
+                                    'link_class'                => 'nav-item', //Custom boxshadow_link_class(); Function inc/theme-setup.php
+                                    'anchor_class'              => 'nav-link', //Custom boxshadow_anchor_class(); Function inc/theme-setup.php
+                                    'anchor_first_child_class'  => 'active', //Custom boxshadow_anchor_first_child_class(); Function inc/theme-setup.php
+                                    'menu_items_before'         => '<a href="" class="sidebar-menu-close"><span></span></a>', //Custom boxshadow_prefix_menu_
+                                    'depth'                     => '3',
+                                ) );
+                                ?>
                             </div>
                         </nav>
                     </div>

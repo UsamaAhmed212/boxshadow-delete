@@ -29,3 +29,20 @@ body.admin-bar #about-box-shadow-wrapper {
     }    
 }
 
+@media only screen and (max-width: 782px) {
+    body.admin-bar #about-box-shadow-wrapper {
+        top: 261px;
+    }
+}
+@media only screen and (min-width: 783px) and (max-width: 1024px)  {
+    body.admin-bar #header .sidebar-menu {
+        top: 32px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 782px)  {
+    body.admin-bar #header .sidebar-menu {
+        top: 46px;
+    }
+}
+

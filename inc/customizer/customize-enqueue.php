@@ -17,8 +17,6 @@ if ( is_user_logged_in() ) {
         
     }
     add_action( 'customize_controls_enqueue_scripts', 'boxshadow_customize_enqueue' );
-
-    add_action( 'wp_enqueue_scripts', 'boxshadow_customize_enqueue' );
+    add_action( 'customize_preview_init', 'boxshadow_customize_enqueue' );
     
 }
-

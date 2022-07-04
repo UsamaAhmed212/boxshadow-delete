@@ -424,7 +424,7 @@ img[data-src] {
     transition: all 0.3s ease-in-out 0s;
 }
 
-#header .header-section .navbar #navbarNav ul li a.active::before {
+#header .header-section .navbar #navbarNav ul li.active a::before {
     visibility: visible;
     -webkit-transform: scaleX(1);
     -moz-transform: scaleX(1);
@@ -899,6 +899,7 @@ img[data-src] {
         overflow-y: auto;
         transition: all .3s ease;
     }
+    
     #header .sidebar-menu ul {
         padding: 0;
     }
@@ -915,8 +916,9 @@ img[data-src] {
         padding: 8px 0;
     }
     
-    #header .sidebar-menu ul li a {
-        color: #95979d;
+    #header .header-section .navbar #navbarNav ul li a {
+        color: #1f1f1f;
+        font-weight: bold;
     }
     
     /* #header > .sidebar-menu > .sub-menu Css */

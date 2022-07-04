@@ -95,7 +95,21 @@
     transition: all 0.2s;
 }
 
-.navbar-brand:hover .customize-partial-edit-shortcut {
+#header .navbar-brand:hover > .customize-partial-edit-shortcut {
+    opacity: 1;
+    animation: customize-partial-edit-shortcut-bounce-appear .4s;
+}
+
+#header .sidebar-menu {
+    position: relative;
+}
+
+#header .sidebar-menu > .customize-partial-edit-shortcut {
+    top: 8px;
+    left: -10px;
+}
+
+#header .sidebar-menu:hover > .customize-partial-edit-shortcut {
     opacity: 1;
     animation: customize-partial-edit-shortcut-bounce-appear .4s;
 }
