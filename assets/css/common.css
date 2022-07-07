@@ -1057,3 +1057,35 @@ img[data-src] {
         font-size: 32px;
     }
 }
+
+/* 
+    ##Device = Large devices [laptops/desktops, 1025px and up] (portrait)
+    ##Screen = B/w 0px to 1025px
+*/
+@media only screen and (min-width: 1025px) {
+    /* Header Menu Layout Css */
+    /* #header.header-left .navbar .container-fluid {
+
+    } */
+
+    #header.sticky.header-center {
+        padding: 16px;
+    }
+
+    #header.header-center .navbar .container-fluid {
+        display: block;
+    }
+
+    #header.header-center .navbar .container-fluid #navbarNav {
+        padding-bottom: 5px;
+    }
+    
+    #header.header-center .navbar .container-fluid a.navbar-brand {
+        margin: 0 auto;
+    }
+
+    #header.header-center .navbar .container-fluid #navbarNav {
+        justify-content: center;
+    }
+
+}

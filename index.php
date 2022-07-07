@@ -34,7 +34,7 @@
     </section>
 
     <!-- Header Area -->
-    <header id="header">
+    <header id="header" class="<?php echo get_theme_mod( 'boxshadow_header_menu_image_radio_button' ); ?>">
         <section class="header-section">
             <div class="container-md p-0">
                 <div class="row m-0">
