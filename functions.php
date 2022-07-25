@@ -15,4 +15,5 @@ define( 'BOXSHADOW_THEME_URI', trailingslashit( esc_url( get_template_directory_
 // Files Enqueue
 require_once BOXSHADOW_THEME_DIR . 'inc/enqueue.php';
 require_once BOXSHADOW_THEME_DIR . 'inc/theme-setup.php';
+require_once BOXSHADOW_THEME_DIR . 'inc/theme-options.php';
 require_once BOXSHADOW_THEME_DIR . 'inc/customizer/customize.php';

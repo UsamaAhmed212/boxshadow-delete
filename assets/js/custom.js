@@ -57,9 +57,9 @@ jQuery( document ).ready( function($) {
         }
 
         // Print Current Year in a Website
-        const copyright = document.querySelector("#copyright");
-        if(copyright != null) {
-            copyright.appendChild(document.createTextNode(new Date().getFullYear()));
+        const copyright_wrapper = document.querySelector("#copyright .copyright_wrapper");
+        if( copyright_wrapper != null ) {
+            copyright_wrapper.appendChild(document.createTextNode(new Date().getFullYear()));
         }
 
         // .sidebar-menu Toggle  

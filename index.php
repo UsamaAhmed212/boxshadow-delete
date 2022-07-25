@@ -327,19 +327,10 @@
                             </div>
                         </section>
                     
-                        <!-- Footer Section -->
-                        <footer id="footer-section" style="background-image: url(&quot;<?php echo get_template_directory_uri(); ?>./images/svg/patrn.svg&quot;);">
-                            <div class="container-md">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-12 p-0 text-center">
-                                        <p id="copyright" data-aos="zoom-in-down">Copyright &copy;
-                                            <span class="heart"></span>
-                                            <a href="#">Usama Ahmed</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
+                        <?php
+                            // Footer Section
+                            get_template_part( 'template-parts/footer/footer', 'layout-1' );
+                        ?>
                     </div>
                 </div>
             </div>

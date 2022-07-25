@@ -22,10 +22,6 @@ function boxshadow_Customizer_register( $wp_customize ) {
     $wp_customize->remove_control( 'blogdescription' );
 
     //Logo Customize
-	$wp_customize->selective_refresh->add_partial( 'boxshadow_logo', array(
-        'selector'        => '.navbar-brand',
-    ) );
-    
     $wp_customize->add_setting( 'boxshadow_logo', array(
         'default' => BOXSHADOW_THEME_URI .'images/logo.png',
     ) );
@@ -47,6 +43,9 @@ function boxshadow_Customizer_register( $wp_customize ) {
         'settings'      => 'boxshadow_logo',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'boxshadow_logo', array(
+        'selector'        => '.navbar-brand',
+    ) );
 
 
     //Site Icon Customize
@@ -69,11 +68,57 @@ function boxshadow_Customizer_register( $wp_customize ) {
     /*******************************************************************
     *Theme Customizer Theme Options Section Start
     ********************************************************************/
+    // Boxshadow WP Customize Panel Class
+    class boxshadow_WP_Customize_Panel extends WP_Customize_Panel {
+  
+        public $panel;
+    
+        public $type = 'boxshadow_panel';
+    
+        public function json() {
+    
+              $array = wp_array_slice_assoc( (array) $this, array( 'id', 'description', 'priority', 'type', 'panel', ) );
+              $array['title'] = html_entity_decode( $this->title, ENT_QUOTES, get_bloginfo( 'charset' ) );
+              $array['content'] = $this->get_content();
+              $array['active'] = $this->active();
+              $array['instanceNumber'] = $this->instance_number;
+      
+              return $array;
+    
+          }
+    
+    }
 
-    //Header Menu Layout
-    $wp_customize->selective_refresh->add_partial( 'boxshadow_header_menu_image_radio_button', array(
-        'selector'        => '.header-section',
-    ) );
+    // Boxshadow WP Customize Section Class
+    class Boxshadow_WP_Customize_Section extends WP_Customize_Section {
+
+        public $section;
+    
+        public $type = 'boxshadow_section';
+    
+        public function json() {
+    
+            $array = wp_array_slice_assoc( (array) $this, array( 'id', 'description', 'priority', 'panel', 'type', 'description_hidden', 'section', ) );
+            $array['title'] = html_entity_decode( $this->title, ENT_QUOTES, get_bloginfo( 'charset' ) );
+            $array['content'] = $this->get_content();
+            $array['active'] = $this->active();
+            $array['instanceNumber'] = $this->instance_number;
+
+            if ( $this->panel ) {
+
+            $array['customizeAction'] = sprintf( 'Customizing &#9656; %s', esc_html( $this->manager->get_panel( $this->panel )->title ) );
+
+            } else {
+
+            $array['customizeAction'] = 'Customizing';
+
+            }
+
+            return $array;
+    
+        }
+    
+    }
 
     $wp_customize->add_panel( 'boxshadow_theme_options', array(
         'title'          => __('Theme Options', 'boxshadow'),
@@ -81,14 +126,15 @@ function boxshadow_Customizer_register( $wp_customize ) {
         'priority'       => 21,
     ) );
 
-    $wp_customize->add_section( 'boxshadow_header_menu', array(
+    /***** Header Menu Layout Start *****/
+    $wp_customize->add_section( new Boxshadow_WP_Customize_Section( $wp_customize, 'boxshadow_header_menu', array(
         'title'          => __('Header Menu', 'boxshadow'),
         'panel'          => 'boxshadow_theme_options',
         'priority'       => 2,
-    ) );
+    ) ) );
 
-    // Custom Boxshadow Custom Image Radio Control Class
-    class boxshadow_Custom_Image_Radio_Control extends WP_Customize_Control {
+    // Boxshadow Custom Image Radio Control Class
+    class Boxshadow_Custom_Image_Radio_Control extends WP_Customize_Control {
 
         public function render_content() {
     
@@ -117,7 +163,7 @@ function boxshadow_Customizer_register( $wp_customize ) {
         'default'       => 'header-left',
     ) );
     
-    $wp_customize->add_control( new boxshadow_Custom_Image_Radio_Control ( $wp_customize, 'boxshadow_header_menu_image_radio_button', array(
+    $wp_customize->add_control( new Boxshadow_Custom_Image_Radio_Control ( $wp_customize, 'boxshadow_header_menu_image_radio_button', array(
         'label'			=> __( 'Header Layout', 'boxshadow' ),
         'choices'		=> array(
             'header-left'    => get_template_directory_uri() . '/inc/customizer/assets/images/header-left.svg',
@@ -127,10 +173,82 @@ function boxshadow_Customizer_register( $wp_customize ) {
         'settings'      => 'boxshadow_header_menu_image_radio_button',
 	) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'boxshadow_header_menu_image_radio_button', array(
+        'selector'        => '.header-section',
+    ) );
+    /***** Header Menu Layout End *****/
+
+    /***** Footer Copyright Start *****/
+    $wp_customize->add_section( new Boxshadow_WP_Customize_Section( $wp_customize, 'boxshadow_footer', array(
+        'title'     => __('Footer', 'boxshadow'),
+        'panel'     => 'boxshadow_theme_options',
+        'priority'  => 3,
+    ) ) );
+
+    $wp_customize->add_section( new Boxshadow_WP_Customize_Section( $wp_customize, 'boxshadow_footer_copyright', array(
+        'title'     => __('Footer Copyright', 'boxshadow'),
+        'panel'     => 'boxshadow_theme_options',
+        'section' => 'boxshadow_footer',
+        'priority'  => 3,
+    ) ) );
+
+
+    // Boxshadow TinyMCE Custom Control
+	class Boxshadow_TinyMCE_Custom_control extends WP_Customize_Control {
+		
+        /**
+        * The type of control being rendered
+        **/
+        public $type = 'tinymce_editor';
+
+		/**
+		* Pass our TinyMCE toolbar string to JavaScript
+		**/
+		public function to_json() {
+			parent::to_json();
+			$this->json['Boxshadowtinymcetoolbar1'] = isset( $this->input_attrs['toolbar1'] ) ? esc_attr( $this->input_attrs['toolbar1'] ) : 'bold italic strikethrough alignleft aligncenter alignright alignjustify link';
+			$this->json['Boxshadowtinymcetoolbar2'] = isset( $this->input_attrs['toolbar2'] ) ? esc_attr( $this->input_attrs['toolbar2'] ) : '';
+			$this->json['Boxshadowmediabuttons'] = isset( $this->input_attrs['mediaButtons'] ) && ( $this->input_attrs['mediaButtons'] === true ) ? true : false;
+		}
+        
+		/**
+		* Render the control in the customizer
+		**/
+		public function render_content() {
+		?>
+			<div class="tinymce-control">
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<?php if( !empty( $this->description ) ) { ?>
+					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+				<?php } ?>
+				<textarea id="<?php echo esc_attr( $this->id ); ?>" class="customize-control-tinymce-editor" <?php $this->link(); ?>><?php echo esc_html( $this->value() ); ?></textarea>
+			</div>
+		<?php
+		}
+
+	}
+
+    $wp_customize->add_setting( 'boxshadow_footer_copyright_text', array(
+        'default' => '',
+    ) );
+
+    $wp_customize->add_control( new Boxshadow_TinyMCE_Custom_control( $wp_customize, 'boxshadow_footer_copyright_text', array(
+            'label'       => __( 'Footer Copyright Control' ),
+            // 'description' => __( '' ),
+            'input_attrs' => array(
+                'toolbar1'      => 'formatselect | styleselect | bold italic strikethrough | forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | insert | fontsizeselect',
+                'mediaButtons'  => true,
+            ),
+            'section'     => 'boxshadow_footer_copyright',
+    ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'boxshadow_footer_copyright_text', array(
+        'selector'  => '.copyright_wrapper',
+    ) );
+    /***** Footer Copyright End *****/
+    
     /*******************************************************************
     *Theme Customizer Theme Options Section End
     ********************************************************************/
 }
 add_action( 'customize_register', 'boxshadow_Customizer_register' );
-
-
