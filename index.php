@@ -10,11 +10,11 @@
     // Scroll to top Button
     get_template_part( 'template-parts/header/scroll', 'to-top-button' );
 
-    // Background Image Area
-    get_template_part( 'template-parts/header/background', 'image-layout-1' );
-
     // Header Area
     get_template_part( 'template-parts/header/header', 'layout-1' );
+
+    // Background Image Area
+    get_template_part( 'template-parts/header/background', 'image-layout-1' );
 ?>
     
     <!-- About Box Shadow Section -->

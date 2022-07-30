@@ -41,19 +41,19 @@ function boxshadow_cs_js_enqueue() {
     wp_enqueue_style( 'boxshadow-index-style' );
 
 
-    // // Portfolio Css Enqueue
-    // wp_register_style( 'boxshadow-portfolio', get_template_directory_uri() . './assets/css/portfolio.css', array(), '1.0.0', 'all' );
-    // wp_enqueue_style( 'boxshadow-portfolio' );
+    // Portfolio Css Enqueue
+    wp_register_style( 'boxshadow-portfolio', get_template_directory_uri() . './assets/css/portfolio.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'boxshadow-portfolio' );
 
 
-    // // portfolio-single Css Enqueue
-    // wp_register_style( 'boxshadow-portfolio-single', get_template_directory_uri() . './assets/css/portfolio-single.css', array(), '1.0.0', 'all' );
-    // wp_enqueue_style( 'boxshadow-portfolio-single' );
+    // portfolio-single Css Enqueue
+    wp_register_style( 'boxshadow-portfolio-single', get_template_directory_uri() . './assets/css/portfolio-single.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'boxshadow-portfolio-single' );
     
 
-    // // Contact Css Enqueue
-    // wp_register_style( 'boxshadow-contact', get_template_directory_uri() . './assets/css/contact.css', array(), '1.0.0', 'all' );
-    // wp_enqueue_style( 'boxshadow-contact' );
+    // Contact Css Enqueue
+    wp_register_style( 'boxshadow-contact', get_template_directory_uri() . './assets/css/contact.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'boxshadow-contact' );
 
 
 
@@ -77,14 +77,14 @@ function boxshadow_cs_js_enqueue() {
     wp_enqueue_style( 'boxshadow-responsive' );
 
 
-    // // Portfolio Responsive Css Enqueue
-    // wp_register_style( 'boxshadow-portfolio-responsive', get_template_directory_uri() . './assets/css/portfolio-responsive.css', array(), '1.0.0', 'all' );
-    // wp_enqueue_style( 'boxshadow-portfolio-responsive' );
+    // Portfolio Responsive Css Enqueue
+    wp_register_style( 'boxshadow-portfolio-responsive', get_template_directory_uri() . './assets/css/portfolio-responsive.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'boxshadow-portfolio-responsive' );
 
 
-    // // Contact Responsive Css Enqueue
-    // wp_register_style( 'boxshadow-contact-responsive', get_template_directory_uri() . './assets/css/contact-responsive.css', array(), '1.0.0', 'all' );
-    // wp_enqueue_style( 'boxshadow-contact-responsive' );
+    // Contact Responsive Css Enqueue
+    wp_register_style( 'boxshadow-contact-responsive', get_template_directory_uri() . './assets/css/contact-responsive.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'boxshadow-contact-responsive' );
 
 
 

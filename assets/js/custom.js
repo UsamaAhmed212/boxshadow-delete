@@ -1,5 +1,5 @@
 "use strict";
-jQuery( document ).ready( function($) {
+( function( $ ) {
     window.addEventListener('load', function (event) {
         // Preloader Js
         var loader = document.querySelector(".loader");
@@ -193,4 +193,4 @@ jQuery( document ).ready( function($) {
         }
         
     });
-});
+})( jQuery );

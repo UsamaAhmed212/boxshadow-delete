@@ -1,18 +1,15 @@
-body{
+body.home{
     background: radial-gradient(circle at 50% 10%, #e6dfd9, #e4ddd7, #ddd6d0, #d4ccc7, #c8bfbb, #bbb2af, #aea4a2, #a19796, #958b8b, #8c8283, #857c7d, #837a7b);
 }
 
 /* Header Area Css */
-#header {
-    /* margin-top: -950px; */
-}
-
 /* Background Image Area Css */
 #background-image {
     position: unset;
 }
 
 #background-image img {
+    width: 100%;
     min-height: 960px;
     object-fit: unset;
 }

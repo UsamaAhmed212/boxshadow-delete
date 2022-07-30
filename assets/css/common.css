@@ -522,11 +522,11 @@ img[data-src] {
 
 
 /* Background Image Area Css */
-#background-image {
+#background-image-overlay {
     position: relative;
 }
 
-#background-image img {
+#background-image-overlay img {
     width: 100%;
     height: auto;
     height: 415px;
@@ -534,7 +534,7 @@ img[data-src] {
     object-fit: cover;
 }
 
-#background-image .image-overlay {
+#background-image-overlay .image-overlay {
     position: absolute;
     left: 0;
     top: 0;
