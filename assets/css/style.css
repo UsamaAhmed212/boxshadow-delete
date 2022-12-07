@@ -597,14 +597,18 @@ hr {
 }
 
 /* Contact Section Css */
-#box-shadow-wrapper .box-shadow-section #contact-section {
+#contact-section {
     padding-top: 50px;
 }
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form {
+#contact-section #contact-form {
     padding: 10px;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control {
+#contact-section #contact-form input,
+#contact-section #contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
     margin-bottom: 12px;
     font-size: 15px;
     font-weight: 400;
@@ -627,31 +631,28 @@ hr {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control::placeholder {
+#contact-section #contact-form input::placeholder,
+#contact-section #contact-form textarea::placeholder {
     color: #949398;
 }
 
-.form-control:focus, .form-control:active {
+#contact-section #contact-form  input:focus, #contact-section #contact-form  input:active,
+#contact-section #contact-form textarea:focus, #contact-section #contact-form textarea:active {
     -webkit-transform: translateY(1px);
     -moz-transform: translateY(1px);
     transform: translateY(1px);
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form {
-    padding: 10px;
-}
-
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .name,
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .email {
+#contact-section #contact-form input {
     margin-right: 5px;
     height: 55px;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .form-control.message {
+#contact-section #contact-form .group.message textarea {
     min-height: 122px;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn {
+#contact-section #contact-form .send-btn {
     min-width: 170px;
     min-height: 45px;
     color: #fff;
@@ -670,7 +671,7 @@ hr {
     letter-spacing: 1px;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn {
+#contact-section #contact-form .send-btn {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -692,7 +693,7 @@ hr {
     overflow: hidden;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn:before {
+#contact-section #contact-form .send-btn:before {
     position: absolute;
     content: '';
     bottom: 0;
@@ -702,29 +703,29 @@ hr {
     background: #54d98c;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span {
+#contact-section #contact-form .send-btn span {
     position: absolute;
     line-height: 0;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span svg {
+#contact-section #contact-form .send-btn span svg {
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
     transform-origin: center center;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span svg path {
+#contact-section #contact-form .send-btn span svg path {
     fill: #FFFFFF;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span:nth-of-type(1) {
+#contact-section #contact-form .send-btn span:nth-of-type(1) {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span:nth-of-type(2) {
+#contact-section #contact-form .send-btn span:nth-of-type(2) {
     width: 25px;
     height: 24px;
     top: 100%;
@@ -734,59 +735,59 @@ hr {
     transform: translateY(0%);
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn span:nth-of-type(3) {
+#contact-section #contact-form .send-btn span:nth-of-type(3) {
     display: none;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active {
+#contact-section #contact-form .send-btn.active {
     background: #2ecc71;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active:before {
+#contact-section #contact-form .send-btn.active:before {
     width: 100%;
     transition: width 3s linear;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active span:nth-of-type(1) {
+#contact-section #contact-form .send-btn.active span:nth-of-type(1) {
     top: -100%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active span:nth-of-type(2) {
+#contact-section #contact-form .send-btn.active span:nth-of-type(2) {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active span:nth-of-type(2) svg {
+#contact-section #contact-form .send-btn.active span:nth-of-type(2) svg {
     -webkit-animation: loading 500ms linear infinite;
     -moz-animation: loading 500ms linear infinite;
     animation: loading 500ms linear infinite;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.active span:nth-of-type(3) {
+#contact-section #contact-form .send-btn.active span:nth-of-type(3) {
     display: none;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.finished {
+#contact-section #contact-form .send-btn.finished {
     background: -webkit-linear-gradient(to right, #23bdb8 0%, #43e794 51%, #23bdb8 100%) 0% 0% / 200%;
     background: -moz-linear-gradient(to right, #23bdb8 0%, #43e794 51%, #23bdb8 100%) 0% 0% / 200%;
     background: linear-gradient(to right, #23bdb8 0%, #43e794 51%, #23bdb8 100%) 0% 0% / 200%;
     background-position: right center;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.finished .submit {
+#contact-section #contact-form .send-btn.finished .submit {
     display: none;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.finished .loading {
+#contact-section #contact-form .send-btn.finished .loading {
     display: none;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.finished .check {
+#contact-section #contact-form .send-btn.finished .check {
     display: block !important;
     font-size: 24px;
     -webkit-animation: scale 0.5s linear;
@@ -794,7 +795,7 @@ hr {
     animation: scale 0.5s linear;
 }
 
-#box-shadow-wrapper .box-shadow-section #contact-section #contact-form .send-btn.finished .check svg {
+#contact-section #contact-form .send-btn.finished .check svg {
     width: 22px;
     height: 24px;
     -webkit-transform-origin: center center;
@@ -838,4 +839,76 @@ hr {
     }
 }
 
+/* Contact Form Submit Css */
+#contact-section #contact-form div:nth-child(1),
+#contact-section #contact-form div:nth-child(2) {
+    z-index: 2;
+}
+
+#contact-section #contact-form div:nth-child(3){
+    z-index: 1;
+}
+
+#contact-section #contact-form .group .control {
+    position: relative;
+}
+
+#contact-section #contact-form .group.warning input:not(:focus),
+#contact-section #contact-form .group.warning textarea:not(:focus) {
+    -webkit-transition: outline 0s !important;
+    transition: outline 0s !important;
+    outline: #dc3545 solid 1px !important;
+}
+
+#contact-section #contact-form .group.warning input:not(:focus) + .warning-sine,
+#contact-section #contact-form .group.warning textarea:not(:focus) + .warning-sine {
+    background-image: url('../../images/warning-sine.png');
+    background-size: 22px 73px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#contact-section #contact-form .group.message.warning textarea:not(:focus) + .warning-sine {
+    top: 11px;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+#contact-section #contact-form .tooltip {
+    background: #BE4B49;
+    color: #ffffff;
+    font-family: "Nunito Sans", Arial, sans-serif;
+    position:  absolute;
+    margin-top: 0px;
+    padding: 10px 15px;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+  
+#contact-section #contact-form .tooltip:before {
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #BE4B49;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+}
+
+#contact-section #contact-form .group.warning .tooltip.active {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
 

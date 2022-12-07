@@ -1,4 +1,11 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
+    svgLoader();
+});
+
+
+function svgLoader() {
     /*
     * Replace all SVG images with inline SVG
     */
@@ -52,5 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Sending our request 
         xhr.send();
-    }); 
-});
+    });
+
+}
