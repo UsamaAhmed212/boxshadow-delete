@@ -498,7 +498,6 @@ class Contact_Section_Widget extends Widget_Base {
 							</form>
 							<script>
 								window.addEventListener('load', function (event) {
-									// var rootPath = "<?php //echo admin_url('admin-ajax.php'); ?>";
 									var rootPath = "<?php echo BOXSHADOW_THEME_DIR_URI; ?>";
 									root_path(rootPath);
 								});
