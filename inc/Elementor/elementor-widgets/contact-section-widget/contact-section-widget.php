@@ -305,7 +305,7 @@ class Contact_Section_Widget extends Widget_Base {
 			'tab' 		=> Controls_Manager::TAB_CONTENT,
 		) );
 
-		$this->add_control( 'boxshadow_contact_form_switcher_1', array(
+		$this->add_control( 'boxshadow_contact_form_switcher', array(
 			'label'	 		=> esc_html__( 'Boxshadow Contact Form Show/Hide', 'boxshadow' ),
 			'type' 			=> Controls_Manager::SWITCHER,
 			'label_on' 		=> esc_html__( 'Show', 'boxshadow' ),
@@ -314,12 +314,12 @@ class Contact_Section_Widget extends Widget_Base {
 			'default' 		=> 'yes',
 		) );
 		
-		$this->add_control( 'boxshadow_contact_form_26', array(
+		$this->add_control( 'boxshadow_contact_form', array(
 			'label'   	  => esc_html__( 'Boxshadow Contact Form', 'boxshadow' ),
 			'description' => esc_html__( 'Boxshadow Contact Form Label & Fields Enable/Disable', 'boxshadow' ),
 			'type'		  => 'BOXSHADOW_CONTACT_FORM',
 			'condition'	  => array(
-				'boxshadow_contact_form_switcher_1' => 'yes',
+				'boxshadow_contact_form_switcher' => 'yes',
 			),
 		) );
 
@@ -361,6 +361,7 @@ class Contact_Section_Widget extends Widget_Base {
 								<span class="subtitle" data-aos="zoom-in"><?php echo $settings['subtitle_title']; ?></span><h2 data-aos="fade-up"><?php echo $settings['title'] ?></h2>
 								<p data-aos="fade-up" data-aos-delay="100"><?php echo $settings['description']; ?></p>
 							</div>
+							
 							<?php
 							if ( $settings['contact_info_switcher'] === 'yes' ) {
 								if ( $settings['contact_info_repeater'] ) {
@@ -433,61 +434,81 @@ class Contact_Section_Widget extends Widget_Base {
 						</div>
 					</div>
 					<div class="col-lg-6 p-0">
-						<?php if ( $settings['boxshadow_contact_form_switcher_1'] === 'yes' ) { ?>
 						<?php 
-						echo '<pre>';
-						// print_r($settings);
-						print_r($settings['boxshadow_contact_form_26']);
-						echo '</pre>';
-						?>
-						<form id="contact-form" class="contact-info-contact-form" data-aos="zoom-in">
-							<div class="group name">
-								<label>Name</label>
-								<div class="control">
-									<input type="text" name="name" placeholder="e.g. John Doe" minlength="3">
-									<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/circle-user.svg" alt="SVG" class="svg"/></span>
+						if ( $settings['boxshadow_contact_form_switcher'] === 'yes' ) { 
+							if ( $settings['boxshadow_contact_form']['name'] === 'true' || $settings['boxshadow_contact_form']['email'] === 'true' || $settings['boxshadow_contact_form']['phone'] === 'true' || $settings['boxshadow_contact_form']['message'] === 'true' ) { ?>
+							<form id="contact-form" class="contact-info-contact-form" data-aos="zoom-in">
+								
+								<?php if ( $settings['boxshadow_contact_form']['name'] === 'true' ) { ?>
+								<div class="group name">
+									<?php if ( $settings['boxshadow_contact_form']['label'] === 'true' ) { ?>
+									<label>Name</label>
+									<?php } ?>
+									<div class="control">
+										<input type="text" name="name" placeholder="e.g. John Doe" minlength="3">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/circle-user.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group email">
-								<label>Email</label>
-								<div class="control">
-									<input type="email" inputmode="email" name="email" placeholder="e.g. john.doe@gmail.com">
-									<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/envelope.svg" alt="SVG" class="svg"/></span>
+								<?php } ?>
+
+								<?php if ( $settings['boxshadow_contact_form']['email'] === 'true' ) { ?>
+								<div class="group email">
+									<?php if ( $settings['boxshadow_contact_form']['label'] === 'true' ) { ?>
+									<label>Email</label>
+									<?php } ?>
+									<div class="control">
+										<input type="email" inputmode="email" name="email" placeholder="e.g. john.doe@gmail.com">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/envelope.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group phone">
-								<label>Phone <span class="optional">(Optional)</span></label>
-								<div class="control">
-									<input type="tel" inputmode="tel" name="phone" placeholder="Phone Number">
-									<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/phone.svg" alt="SVG" class="svg"/></span>
+								<?php } ?>
+
+								<?php if ( $settings['boxshadow_contact_form']['phone'] === 'true' ) { ?>
+								<div class="group phone">
+									<?php if ( $settings['boxshadow_contact_form']['label'] === 'true' ) { ?>
+									<label>Phone <span class="optional">(Optional)</span></label>
+									<?php } ?>
+									<div class="control">
+										<input type="tel" inputmode="tel" name="phone" placeholder="Phone Number">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/phone.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group message">
-								<label>Message</label>
-								<div class="control">
-									<textarea name="message" placeholder="Write message..." ></textarea>
-									<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/comments.svg" alt="SVG" class="svg"/></span>
+								<?php } ?>
+
+								<?php if ( $settings['boxshadow_contact_form']['message'] === 'true' ) { ?>
+								<div class="group message">
+									<?php if ( $settings['boxshadow_contact_form']['label'] === 'true' ) { ?>
+									<label>Message</label>
+									<?php } ?>
+									<div class="control">
+										<textarea name="message" placeholder="Write message..." ></textarea>
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/comments.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group">
-								<div class="control">
-									<button class="send-btn btn-dark" type="submit">
-										<span class="submit">Send Message</span>
-										<span class="loading"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
-										<span class="check"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/check.svg" alt="SVG" class="svg"></span>
-									</button>
+								<?php } ?>
+
+								<div class="group">
+									<div class="control">
+										<button class="send-btn btn-dark" type="submit">
+											<span class="submit">Send Message</span>
+											<span class="loading"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
+											<span class="check"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/check.svg" alt="SVG" class="svg"></span>
+										</button>
+									</div>
 								</div>
-							</div>
-						</form>
-						<script>
-							window.addEventListener('load', function (event) {
-								// var rootPath = "<?php //echo admin_url('admin-ajax.php'); ?>";
-								var rootPath = "<?php echo BOXSHADOW_THEME_DIR_URI; ?>";
-								root_path(rootPath);
-							});
-						</script>
-						<?php //echo do_shortcode( '[contact-form-7 id="3133" title="Contact Form"]' ); ?>
-						<?php } ?>
+							</form>
+							<script>
+								window.addEventListener('load', function (event) {
+									// var rootPath = "<?php //echo admin_url('admin-ajax.php'); ?>";
+									var rootPath = "<?php echo BOXSHADOW_THEME_DIR_URI; ?>";
+									root_path(rootPath);
+								});
+							</script>
+						<?php 
+							} 
+						} ?>
+
+						<?php //echo do_shortcode( '[contact-form-7 id="'.$settings['contact_form_7'].'"]' ); ?>
 					</div>
 				</div>
 			</div>
@@ -497,48 +518,11 @@ class Contact_Section_Widget extends Widget_Base {
 				svgLoader();
 			}
 		</script>
-		<h1 style="color: red;text-align: center;">Contact Form Two</h1>
-		<!-- Contact Section -->
-		<section id="contact-section">
-			<div class="container-md p-0">
-				<form id="contact-form" class="row m-0 justify-content-center">
-					<div class="col-sm-6 col-lg-5" data-aos="zoom-in">
-						<div class="group name">
-							<div class="control">
-								<input type="text" placeholder="Name" name="name">
-							</div>
-						</div>
-						<div class="group email">
-							<div class="control">
-								<input type="text" placeholder="Email" name="email">
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-5" data-aos="zoom-in">
-						<div class="group message">
-							<div class="control message">
-								<textarea  placeholder="Message" name="message"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 py-4 group">
-						<div data-aos="zoom-in" class=" control">
-							<button type="submit" class="send-btn">
-								<span class="submit">Send Message</span>
-								<span class="loading"><img src="<?php echo get_template_directory_uri(); ?>/images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
-								<span class="check"><img src="<?php echo get_template_directory_uri(); ?>/images/svg/check.svg" alt="SVG" class="svg"></span>
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</section>
-		
 	<?php
 	}
 
 	// Elementor Editor When Something Causes the Preview to be Reloaded
-	protected function content_template_delete() { ?>
+	protected function content_templateX() { ?>
 		<!-- Contact Section -->
 		<section id="contact-section-wrapper">
 			<div class="container-md">
@@ -613,51 +597,80 @@ class Contact_Section_Widget extends Widget_Base {
 						</div>
 					</div>
 					<div class="col-lg-6 p-0">
-						<form id="contact-form" data-aos="zoom-in">
-							<div class="group">
-								<label>Name</label>
-								<div class="control">
-									<input type="text" name="name" placeholder="e.g. John Doe" minlength="3" >
-									<span><img src="images/svg/circle-user.svg" alt="SVG" class="svg"/></span>
+						<# 
+						if ( settings.boxshadow_contact_form_switcher === 'yes' ) {
+							if ( settings.boxshadow_contact_form.name === 'true' || settings.boxshadow_contact_form.email === 'true' || settings.boxshadow_contact_form.phone === 'true' || settings.boxshadow_contact_form.message === 'true') { #>
+							<form id="contact-form" class="contact-info-contact-form" data-aos="zoom-in">
+								
+								<# if ( settings.boxshadow_contact_form.name === 'true' ) { #>
+								<div class="group name">
+									<# if ( settings.boxshadow_contact_form.label === 'true' ) { #>
+									<label>Name</label>
+									<# } #>
+									<div class="control">
+										<input type="text" name="name" placeholder="e.g. John Doe" minlength="3">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/circle-user.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group">
-								<label>Email</label>
-								<div class="control">
-									<input type="email" inputmode="email" name="email" placeholder="e.g. john.doe@gmail.com" >
-									<span><img src="images/svg/envelope.svg" alt="SVG" class="svg"/></span>
+								<# } #>
+
+								<# if ( settings.boxshadow_contact_form.email === 'true' ) { #>
+								<div class="group email">
+									<# if ( settings.boxshadow_contact_form.label === 'true' ) { #>
+									<label>Email</label>
+									<# } #>
+									<div class="control">
+										<input type="email" inputmode="email" name="email" placeholder="e.g. john.doe@gmail.com">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/envelope.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group">
-								<label>Phone <span class="optional">(Optional)</span></label>
-								<div class="control">
-									<input type="tel" inputmode="tel" name="phone" placeholder="Phone Number">
-									<span><img src="images/svg/phone.svg" alt="SVG" class="svg"/></span>
+								<# } #>
+
+								<# if ( settings.boxshadow_contact_form.phone === 'true' ) { #>
+								<div class="group phone">
+									<# if ( settings.boxshadow_contact_form.label === 'true' ) { #>
+									<label>Phone <span class="optional">(Optional)</span></label>
+									<# } #>
+									<div class="control">
+										<input type="tel" inputmode="tel" name="phone" placeholder="Phone Number">
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/phone.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group">
-								<label>Message</label>
-								<div class="control">
-									<textarea name="message" placeholder="Write message..." ></textarea>
-									<span><img src="images/svg/comments.svg" alt="SVG" class="svg"/></span>
+								<# } #>
+
+								<# if ( settings.boxshadow_contact_form.message === 'true' ) { #>
+								<div class="group message">
+									<# if ( settings.boxshadow_contact_form.label === 'true' ) { #>
+									<label>Message</label>
+									<# } #>
+									<div class="control">
+										<textarea name="message" placeholder="Write message..." ></textarea>
+										<span><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/comments.svg" alt="SVG" class="svg"/></span>
+									</div>
 								</div>
-							</div>
-							<div class="group">
-								<div class="control">
-									<button class="send-btn btn-dark" type="submit">
-										<span class="submit">Send Message</span>
-										<span class="loading"><img src="images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
-										<span class="check"><img src="images/svg/check.svg" alt="SVG" class="svg"></span>
-									</button>
+								<# } #>
+
+								<div class="group">
+									<div class="control">
+										<button class="send-btn btn-dark" type="submit">
+											<span class="submit">Send Message</span>
+											<span class="loading"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/arrows-rotate.svg" alt="SVG" class="svg"></span>
+											<span class="check"><img src="<?php echo BOXSHADOW_THEME_DIR_URI; ?>images/svg/check.svg" alt="SVG" class="svg"></span>
+										</button>
+									</div>
 								</div>
-							</div>
-						</form>
+							</form>
+						<# 
+							} 
+						} #>
 					</div>
 				</div>
 			</div>
 		</section>
 		<script type="text/javascript">
-			svgLoader();
+			if ( typeof svgLoader == 'function' ) {
+				svgLoader();
+			}
 		</script>
 	<?php
 	}

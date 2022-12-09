@@ -82,7 +82,7 @@ class Contact_Form_7_Control extends Base_Data_Control {
 					<select id="<?php echo $control_uid; ?>" data-setting="{{ data.name }}">
 						<option value="" disabled><?php echo esc_html__( 'Select Contact Form', 'boxshadow' ); ?></option>
 						<# _.each( data.contact_form, function( value, key ) { #>
-						<option value="{{ key }}">{{{ value }}}</option>
+						<option value="{{{ key }}}">{{{ value }}}</option>
 						<# } ); #>
 					</select>
 				<# } #>

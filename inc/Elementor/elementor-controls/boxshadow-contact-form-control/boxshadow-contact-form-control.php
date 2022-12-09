@@ -100,14 +100,17 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 	}
 	
 	public function get_default_value() {
-		return [];
+		return [
+			'label' => 'true',
+			'name' => 'true',
+			'email' => 'true',
+			'phone' => 'true',
+			'message' => 'true',
+		];
 	}
 
 	// Render Contact Form 7 Control Output in the Editor
-	public function content_template() {
-		// Get  Control Uid From the Control Settings.
-		$control_uid = $this->get_control_uid(); 
-		?>
+	public function content_template() { ?>
 		<div class="elementor-control-field">
 
 			<# if ( data.label ) {#>
@@ -116,80 +119,69 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 
 			<div class="elementor-control-input-wrapper">
 				
-				<# if ( data ) {
-					console.log(_.extend(data));
-					console.log(data.controlValue);
-					console.log(data.controlValue.label);
-				} #>
-
-
                 <div class="boxshadow-checkbox-wrapper-7">
                     <span class="title"><?php echo esc_html__( 'Label Show/Hide', 'boxshadow' ); ?></span>
                     <span>
-						<# if ( data.controlValue.label === 'on' || data.controlValue.label === 'off' ) {
-							
-							if ( data.controlValue.label === 'on' ) { #>
-								<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" value="on" checked="checked"/>
-							<# } else { #>
-									<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" value="off"/>
-							<#	} 
-
-						} else { #>
-							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" value="on" checked="checked"/>
+						<# if ( data.controlValue.label === 'false' ) { #>
+							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label"/>
+						<# } else { #>
+							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" checked="checked"/>
 						<# } #>
                         <label for="cb-7"></label>
                     </span>
                 </div>
 
-                <!-- <div class="boxshadow-checkbox-wrapper-55">
+                <div class="boxshadow-checkbox-wrapper-55">
                     <span class="title"><?php echo esc_html__( 'Name Visible', 'boxshadow' ); ?></span>
                     <label>
-						<# if ( data.controlValue.name == 'true') {#>
-							<input type="checkbox" name="name" checked="checked" data-setting="{{ data.name }}">
+						<# if ( data.controlValue.name === 'false' ) {#>
+							<input class="boxshadow-contact-form" type="checkbox" name="name">
 						<# } else { #>
-							<input type="checkbox" name="name" data-setting="{{ data.name }}">
+							<input class="boxshadow-contact-form" type="checkbox" name="name" checked="checked">
 						<# } #>
-
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
                     </label>
                 </div>
+
                 <div class="boxshadow-checkbox-wrapper-55">
                     <span class="title"><?php echo esc_html__( 'Email Visible', 'boxshadow' ); ?></span>
                     <label>
-						<# if ( data.controlValue.email == 'true') {#>
-							<input type="checkbox" name="email" checked="checked" data-setting="{{ data.name }}">
+						<# if ( data.controlValue.email === 'false' ) {#>
+							<input class="boxshadow-contact-form" type="checkbox" name="email">
 						<# } else { #>
-							<input type="checkbox" name="email" data-setting="{{ data.name }}">
+							<input class="boxshadow-contact-form" type="checkbox" name="email" checked="checked">
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
                     </label>
                 </div>
+
                 <div class="boxshadow-checkbox-wrapper-55">
                     <span class="title"><?php echo esc_html__( 'Phone Visible', 'boxshadow' ); ?></span>
                     <label>
-						<# if ( data.controlValue.phone == 'true') {#>
-							<input type="checkbox" name="phone" checked="checked" data-setting="{{ data.name }}">
+						<# if ( data.controlValue.phone === 'false' ) {#>
+							<input class="boxshadow-contact-form" type="checkbox" name="phone">
 						<# } else { #>
-							<input type="checkbox" name="phone" data-setting="{{ data.name }}">
+							<input class="boxshadow-contact-form" type="checkbox" name="phone" checked="checked">
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
                     </label>
                 </div>
+				
                 <div class="boxshadow-checkbox-wrapper-55">
                     <span class="title"><?php echo esc_html__( 'Message Visible', 'boxshadow' ); ?></span>
                     <label>
-						<# if ( data.controlValue.message == 'true') {#>
-							<input type="checkbox" name="message" checked="checked" data-setting="{{ data.name }}">
+						<# if ( data.controlValue.message === 'false' ) {#>
+							<input class="boxshadow-contact-form" type="checkbox" name="message">
 						<# } else { #>
-							<input type="checkbox" name="message" data-setting="{{ data.name }}">
+							<input class="boxshadow-contact-form" type="checkbox" name="message" checked="checked">
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
                     </label>
-                </div> -->
+                </div>
 
 			</div>
 

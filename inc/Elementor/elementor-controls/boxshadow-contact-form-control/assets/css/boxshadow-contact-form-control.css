@@ -13,8 +13,8 @@
 }
 
 .boxshadow-checkbox-wrapper-7 input {
-    /* visibility: hidden;
-    display: none; */
+    visibility: hidden;
+    display: none;
 }
 
 .boxshadow-checkbox-wrapper-7 input,
@@ -143,8 +143,8 @@
 }
 
 .boxshadow-checkbox-wrapper-55 input[type="checkbox"] {
-    /* visibility: hidden;
-    display: none; */
+    visibility: hidden;
+    display: none;
 }
 
 .boxshadow-checkbox-wrapper-55 *,
