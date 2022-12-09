@@ -29,73 +29,10 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 		return 'BOXSHADOW_CONTACT_FORM';
 	}
 
-	//  Get BoxShadow Contact Form
-	// public static function get_currencies() {
-	// 	return [
-	// 		'USD' => 'USD ($)',
-	// 		'EUR' => 'EUR (€)',
-	// 		'GBP' => 'GBP (£)',
-	// 		'JPY' => 'JPY (¥)',
-	// 		'ILS' => 'ILS (₪)',
-	// 	];
-	// }
-
-
-	// Get BoxShadow Contact Form
-	public function boxshadow_contact_form () {
-
-		// $countactform = array();
-		// $boxshadow_forms_args = array( 'posts_per_page' => -1, 'post_type'=> 'wpcf7_contact_form' );
-		// $boxshadow_forms = get_posts( $boxshadow_forms_args );
-
-		// if( $boxshadow_forms ) {
-
-		// 	foreach ( $boxshadow_forms as $boxshadow_form ) {
-
-		// 		$countactform[$boxshadow_form->ID] = $boxshadow_form->post_title;
-
-		// 	}
-
-		// } else {
-
-		// 	$countactform = array();
-
-		// }
-
-		// return $countactform;
-
-		global $wpdb;
-		$results = $wpdb->get_results("SELECT `meta_value` FROM `wp_postmeta` WHERE `meta_key` LIKE '_elementor_data' ORDER BY `meta_id` DESC LIMIT 1");
-
-		$result = json_decode(json_encode($results[0]), true);
-		$result = json_decode(json_encode($result['meta_value']), true);
-		$result = json_decode($result, true);
-		$result = $result[0]['elements'][0]['elements'][0]['settings']['boxshadow_contact_form_8'];
-
-		// $control_uid = $this['Elementor\boxshadow_contact_form_Control'];
-		// $control_uid = var_dump($this);
-		// $control_uid = json_decode($this, true);
-		// $control_uid = json_decode(json_encode($this), true);
-		// $control_uid = $control_uid['_base_settings:Elementor\Base_Control:private'];
-
-
-		// echo '<pre>';
-		// print_r($results);
-		// print_r($result);
-		// print_r($control_uid);
-		// print_r($this);
-		// echo '</pre>';
-
-	}
-
-
 	// Get Boxshadow Contact Form Control Default Settings
 	protected function get_default_settings() {
 		return [
 			'label_block' => true,
-			// 'contact_form' => self::get_currencies(),
-			// 'contact_form' => [],
-			'contact_form' => self::boxshadow_contact_form(),
 		];
 	}
 	

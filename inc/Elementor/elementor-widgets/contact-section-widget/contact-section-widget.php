@@ -349,8 +349,7 @@ class Contact_Section_Widget extends Widget_Base {
 	// The Render the Widget Output on the Front End.
 	protected function render() {
 		// Get  Input From the Widget Settings.
-        $settings = $this->get_settings_for_display();
-		?>
+        $settings = $this->get_settings_for_display(); ?>
 		<!-- Contact Section -->
 		<section id="contact-section-wrapper">
 			<div class="container-md">
