@@ -27,8 +27,8 @@ if ( is_plugin_active( 'elementor/elementor.php' ) ) {
     require_once BOXSHADOW_THEME_DIR . 'inc/Elementor/elementor.php';
 }
 
-if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
-    // Contact Form 7 ( Integration ) Init
-    require_once BOXSHADOW_THEME_DIR . 'inc/contact-form-7/contact-form-7.php';
-}
+// if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
+//     // Contact Form 7 ( Integration ) Init
+//     require_once BOXSHADOW_THEME_DIR . 'inc/contact-form-7/contact-form-7.php';
+// }
 

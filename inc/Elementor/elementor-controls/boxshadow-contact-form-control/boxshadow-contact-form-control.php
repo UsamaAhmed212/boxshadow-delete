@@ -62,7 +62,7 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 						<# if ( data.controlValue.label === 'false' ) { #>
 							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label"/>
 						<# } else { #>
-							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" checked="checked"/>
+							<input id="cb-7" class="boxshadow-contact-form" type="checkbox" name="label" checked/>
 						<# } #>
                         <label for="cb-7"></label>
                     </span>
@@ -74,7 +74,7 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 						<# if ( data.controlValue.name === 'false' ) {#>
 							<input class="boxshadow-contact-form" type="checkbox" name="name">
 						<# } else { #>
-							<input class="boxshadow-contact-form" type="checkbox" name="name" checked="checked">
+							<input class="boxshadow-contact-form" type="checkbox" name="name" checked>
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
@@ -87,7 +87,7 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 						<# if ( data.controlValue.email === 'false' ) {#>
 							<input class="boxshadow-contact-form" type="checkbox" name="email">
 						<# } else { #>
-							<input class="boxshadow-contact-form" type="checkbox" name="email" checked="checked">
+							<input class="boxshadow-contact-form" type="checkbox" name="email" checked>
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
@@ -100,7 +100,7 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 						<# if ( data.controlValue.phone === 'false' ) {#>
 							<input class="boxshadow-contact-form" type="checkbox" name="phone">
 						<# } else { #>
-							<input class="boxshadow-contact-form" type="checkbox" name="phone" checked="checked">
+							<input class="boxshadow-contact-form" type="checkbox" name="phone" checked>
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>
@@ -113,7 +113,7 @@ class boxshadow_contact_form_Control extends Base_Data_Control {
 						<# if ( data.controlValue.message === 'false' ) {#>
 							<input class="boxshadow-contact-form" type="checkbox" name="message">
 						<# } else { #>
-							<input class="boxshadow-contact-form" type="checkbox" name="message" checked="checked">
+							<input class="boxshadow-contact-form" type="checkbox" name="message" checked>
 						<# } #>
                         <span class="switch-left"><?php echo esc_html__( 'No', 'boxshadow' ); ?></span>
                         <span class="switch-right"><?php echo esc_html__( 'Yes', 'boxshadow' ); ?></span>

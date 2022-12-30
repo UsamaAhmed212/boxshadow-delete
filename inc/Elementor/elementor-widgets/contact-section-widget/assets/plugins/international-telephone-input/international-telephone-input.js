@@ -15168,8 +15168,8 @@ function intlTelInputInit(elements) {
 
     // click off to close
     document.addEventListener('click', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
+        // e.stopPropagation();
+        // e.preventDefault();
         
         //  Close Dropdown 
         _closeDropdown();

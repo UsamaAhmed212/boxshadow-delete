@@ -14,13 +14,22 @@ class Contact_Section_Widget extends Widget_Base {
 		// Font Awesome V6.1.2 Enqueue
 		wp_register_style( 'font-awesome-free', '//use.fontawesome.com/releases/v6.1.2/css/all.css', array(), '6.1.2', 'all' );
 		
+		// Contact Section Widget Enqueue
+		wp_register_style( 'contact-section-widget', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-widgets/contact-section-widget/assets/css/contact-section-widget.css', array(), '1.0.0', 'all' );
+		
 		// International Telephone Input Enqueue
 		wp_register_style( 'international-telephone-input', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-widgets/contact-section-widget/assets/plugins/international-telephone-input/international-telephone-input.css', array(), '1.0.0', 'all' );
+		
+		// Contact Form 7 Widget Enqueue
+		wp_register_style( 'contact-form-7-widget', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-widgets/contact-section-widget/assets/css/contact-form-7-widget.css', array(), '1.0.0', 'all' );
 
 		return array( 
 			'font-awesome-free',
+			'contact-section-widget',
 			'international-telephone-input',
-		 );
+			
+			'contact-form-7-widget',
+		);
 	}
 	
 	// Widget Dependencies Scripts Enqueue
@@ -35,10 +44,15 @@ class Contact_Section_Widget extends Widget_Base {
 		// Contact Form Enqueue
 		wp_register_script( 'contact-form', BOXSHADOW_THEME_DIR_URI . 'assets/js/contact-form.js', array(), '1.0.0', true );
 
+		// Contact Form 7 Widget Enqueue
+		wp_register_script( 'contact-form-7-widget', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-widgets/contact-section-widget/assets/js/contact-form-7-widget.js', array(), '1.0.0', true );
+
 		return array( 
 			'boxshadow-svg-loader',
 			'international-telephone-input',
 			'contact-form',
+
+			'contact-form-7-widget',
 		 );
 	}
  
@@ -300,7 +314,7 @@ class Contact_Section_Widget extends Widget_Base {
 
 		//  Controls Section Start
 		$this->start_controls_section( 'contact_form', array (
-			'label'		=> esc_html__( 'Contact Form 7', 'boxshadow' ),
+			'label'		=> esc_html__( 'Contact Form', 'boxshadow' ),
 			'type' 		=> Controls_Manager::SECTION, 
 			'tab' 		=> Controls_Manager::TAB_CONTENT,
 		) );
@@ -435,9 +449,9 @@ class Contact_Section_Widget extends Widget_Base {
 					<div class="col-lg-6 p-0">
 						<?php 
 						if ( $settings['boxshadow_contact_form_switcher'] === 'yes' ) { 
-							if ( $settings['boxshadow_contact_form']['name'] === 'true' || $settings['boxshadow_contact_form']['email'] === 'true' || $settings['boxshadow_contact_form']['phone'] === 'true' || $settings['boxshadow_contact_form']['message'] === 'true' ) { ?>
+							if ( $settings['boxshadow_contact_form']['name'] === 'true' || $settings['boxshadow_contact_form']['email'] === 'true' || $settings['boxshadow_contact_form']['phone'] === 'true' || $settings['boxshadow_contact_form']['message'] === 'true' ) { 
+							?>
 							<form id="contact-form" class="contact-info-contact-form" data-aos="zoom-in">
-								
 								<?php if ( $settings['boxshadow_contact_form']['name'] === 'true' ) { ?>
 								<div class="group name">
 									<?php if ( $settings['boxshadow_contact_form']['label'] === 'true' ) { ?>
@@ -504,9 +518,19 @@ class Contact_Section_Widget extends Widget_Base {
 							</script>
 						<?php 
 							} 
-						} ?>
+						}
+						
+						if ( $settings['contact_form_7_switcher'] === 'yes' ) { 
+							$contactFormSeven = do_shortcode( '[contact-form-7 id="'.$settings['contact_form_7'].'"]' );
 
-						<?php //echo do_shortcode( '[contact-form-7 id="'.$settings['contact_form_7'].'"]' ); ?>
+							if( $contactFormSeven == '[contact-form-7 404 "Not Found"]' || $contactFormSeven == "[contact-form-7 404 'Not Found']" ) { ?>
+								<div class="contact-form-7-no-select">Please Select Contact Form</div>
+							<?php
+							} else {
+								echo $contactFormSeven;
+							}
+						}
+						?>
 					</div>
 				</div>
 			</div>
@@ -661,6 +685,20 @@ class Contact_Section_Widget extends Widget_Base {
 						<# 
 							} 
 						} #>
+						
+
+						<#
+						if ( _.isEmpty( settings.contact_form_7 ) ) { #>
+							<div class="contact-form-7-no-select">Please Select Contact Form</div>
+						<# 
+						} else {
+
+						#>
+						<?php 
+							$id = "{{{settings.contact_form_7}}}";
+							// echo do_shortcode( '[contact-form-7 id="'.$id.'"]' );
+						?>
+						<# } #>
 					</div>
 				</div>
 			</div>

@@ -16,8 +16,12 @@ class Contact_Form_7_Control extends Base_Data_Control {
 	// Control Dependencies Styles Enqueue
 	public function enqueue() {
         // Styles
-		wp_register_style( 'boxshadow-contact-form-7-control', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-controls/contact-form-7-control/assets/css/boxshadow-contact-form-7-control.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'boxshadow-contact-form-7-control' );
+		wp_register_style( 'contact-form-7-control', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-controls/contact-form-7-control/assets/css/contact-form-7-control.css', array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'contact-form-7-control' );
+		
+		// Scripts
+		wp_register_script( 'contact-form-7-control', BOXSHADOW_THEME_DIR_URI . 'inc/elementor/elementor-controls/contact-form-7-control/assets/js/contact-form-7-control.js', array(), '1.0.0', 'all' );
+		// wp_enqueue_script( 'contact-form-7-control' );
 	}
 
 	// Get Contact Form 7 Control type
@@ -49,7 +53,7 @@ class Contact_Form_7_Control extends Base_Data_Control {
 		return $countactform;
 
 	}
-
+	
 	// Get Contact Form 7 Control Default Settings
 	protected function get_default_settings() {
 		return [
@@ -79,8 +83,8 @@ class Contact_Form_7_Control extends Base_Data_Control {
 					<a href="<?php echo admin_url('admin.php?page=wpcf7-new'); ?>" class="create-contact-form">Create a New Contact Form</a>
 				<# 
 				} else { #>
-					<select id="<?php echo $control_uid; ?>" data-setting="{{ data.name }}">
-						<option value="" disabled><?php echo esc_html__( 'Select Contact Form', 'boxshadow' ); ?></option>
+					<select id="<?php echo $control_uid; ?>" class="boxshadow-contact-form-seven" data-setting="{{ data.name }}">
+						<option value="" selected disabled><?php echo esc_html__( 'Select Contact Form', 'boxshadow' ); ?></option>
 						<# _.each( data.contact_form, function( value, key ) { #>
 						<option value="{{{ key }}}">{{{ value }}}</option>
 						<# } ); #>

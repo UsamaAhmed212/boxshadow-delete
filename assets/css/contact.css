@@ -88,6 +88,7 @@
 #contact-section-wrapper .contact-text .contact-info > li span svg {
     width: 100%;
     height: 100%;
+    fill: #ffffff9c;
 }
 
 #contact-section-wrapper .contact-text .contact-info > li span svg path {
@@ -245,7 +246,7 @@ input:invalid, input:required, textarea:invalid, textarea:required {
     display: block;
     width: 100%;
     height: 40px;
-    padding-left: 14px;
+    padding-left: 40px;
     padding-right: 14px;
     border: none;
     color: #ffffff9c;
@@ -285,10 +286,6 @@ input:invalid, input:required, textarea:invalid, textarea:required {
 }
 
 #contact-section-wrapper #contact-form.contact-info-contact-form .group .control textarea {
-    text-indent: 26px;
-}
-
-#contact-section-wrapper #contact-form.contact-info-contact-form .group .control textarea {
     min-height: 120px;
     white-space: normal;
     padding-top: 10px;
@@ -321,9 +318,6 @@ input:invalid, input:required, textarea:invalid, textarea:required {
 #contact-section-wrapper #contact-form.contact-info-contact-form .group .control > span svg {
     width: 100%;
     height: 100%;
-}
-
-#contact-section-wrapper #contact-form.contact-info-contact-form .group .control > span svg path {
     fill: #ffffff9c;
 }
 
@@ -359,9 +353,6 @@ input:invalid, input:required, textarea:invalid, textarea:required {
     text-transform: capitalize;
     cursor: pointer;
     letter-spacing: 1px;
-}
-
-#contact-section-wrapper #contact-form.contact-info-contact-form .group .control .send-btn {
     position: relative;
     display: flex;
     flex-direction: column;
